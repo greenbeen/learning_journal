@@ -1,7 +1,9 @@
 from pyramid.httpexceptions import HTTPFound, HTTPNotFound
 from pyramid.view import view_config
-
 from pyramid.security import forget, remember, authenticated_userid
+
+from jinja2 import Markup
+import markdown
 
 from .models import (
     DBSession,
@@ -74,3 +76,8 @@ def sign_in(request):
     else:
         headers = forget(request)
     return HTTPFound(location=request.route_url('home'), headers=headers)
+
+
+def render_markdown(content):
+    output = Markup(markdown.markdown(content))
+    return output
