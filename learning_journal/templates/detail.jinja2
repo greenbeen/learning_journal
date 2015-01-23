@@ -1,6 +1,7 @@
 {% extends "layout.jinja2" %}
 {% block body %}
 <article>
+  <p>{{ entry.body|markdown }}</p>
   <h1>{{ entry.title }}</h1>
   <hr/>
   <p>{{ entry.body }}</p>
