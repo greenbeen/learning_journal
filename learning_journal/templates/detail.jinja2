@@ -3,7 +3,7 @@
 <article>
   <h1>{{ entry.title|markdown }}</h1>
   <p>{{ entry.body|markdown }}</p>
-  {#
+  {# This portion created a duplicate of the title and body without the markdown
   <h1>{{ entry.title }}</h1>
   <hr/>
   <p>{{ entry.body }}</p>
